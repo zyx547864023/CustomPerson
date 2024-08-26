@@ -553,7 +553,8 @@ public class Controller {
                 // 处理文件内容
                 System.out.println(new String(fileContent));
                 try {
-                    JSONObject personJSONObject = new JSONObject(new String(fileContent));
+                    Charset encoding = Charset.forName("UTF-8");
+                    JSONObject personJSONObject = new JSONObject(new String(fileContent,encoding));
                     //星系
                     if (!personJSONObject.isNull("skill")){
                         JSONArray skillJSONArray = personJSONObject.getJSONArray("skill");
